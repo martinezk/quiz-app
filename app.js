@@ -35,12 +35,12 @@ function userChoice(quiz, quizQuestion){
 			quizTotal+=4;
 		}
 	}
-
+}
 
 //--delete current question
-function (){
+function deleteQuestion(){
 	delete quizQuestion[i];
-};
+}
 
 //render functions
 //--show the q&a as unordered list
@@ -50,3 +50,8 @@ function (){
 //event listenters
 //--start button listener
 //--next button listener 
+function checkAns1(){
+	var value = $('.question-1 input:checked').val();
+	console.log(value);
+}
+$('.question-1 > button').click(checkAns1)
