@@ -19,6 +19,6 @@ h1 {
 	padding: 20px;
 	width: 400px;
 }
-.buttons {
+.buttons, p{
 	text-align: center;
 }
