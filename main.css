@@ -1,6 +1,24 @@
 *{
 	font-family: Sans-serif;
+	margin: auto;
 }
 li{
 	list-style-type: none;
+}
+h1 {
+	text-align: center;
+	width: 600px;
+	padding-top: 60px;
+	padding-bottom: 40px;
+	
+}
+.hidden{
+	display: none;
+}
+.show {
+	padding: 20px;
+	width: 400px;
+}
+.buttons, p{
+	text-align: center;
 }
