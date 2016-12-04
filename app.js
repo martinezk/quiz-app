@@ -15,6 +15,7 @@ function userChoice(selectedAns){
 function displayScore(){
 	if (currentPage > 3){
 		philosopher();
+		$('.score').text(quizTotal);
 		$('#start-over').removeClass('hidden');
 		$('#next').addClass('hidden');
 	}
@@ -22,14 +23,14 @@ function displayScore(){
 
 function philosopher(){
 	if (quizTotal < 5){
-			$('#Kant').removeClass('hidden');
-		} else if (4 < quizTotal < 9 ){
-			$('#Derrida').removeClass('hidden');
-		} else if (8 < quizTotal < 14){
-			$('#Nietsche').removeClass('hidden');
-		} else {
-			$('#Hume').removeClass('hidden');
-		}
+		$('.kant').removeClass('hidden');
+	} else if (4 < quizTotal < 9 ){
+		$('.derrida').removeClass('hidden');
+	} else if (8 < quizTotal < 14){
+		$('.nietsche').removeClass('hidden');
+	} else {
+		$('.hume').removeClass('hidden');
+	}
 }
 
 //event listenters

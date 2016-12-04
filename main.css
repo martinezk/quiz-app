@@ -22,3 +22,9 @@ h1 {
 .buttons, p{
 	text-align: center;
 }
+img{
+	width: 400px;
+}
+.kant, .nietsche, .hume, .derrida{
+	margin: auto;
+}
