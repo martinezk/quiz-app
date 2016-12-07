@@ -13,7 +13,7 @@ function userChoice(selectedAns){
 //render functions
 
 function displayScore(){
-	if (currentPage > 3){
+	if (currentPage > 5){
 		philosopher();
 		$('.score').text(quizTotal);
 		$('#start-over').removeClass('hidden');
@@ -22,14 +22,14 @@ function displayScore(){
 }
 
 function philosopher(){
-	if (quizTotal < 5){
+	if (quizTotal < 9){
+		$('.hume').removeClass('hidden');
+	} else if (8 < quizTotal < 11){
 		$('.kant').removeClass('hidden');
-	} else if (4 < quizTotal < 9 ){
-		$('.derrida').removeClass('hidden');
-	} else if (8 < quizTotal < 14){
+	} else if (10 < quizTotal < 15 ){
 		$('.nietsche').removeClass('hidden');
 	} else {
-		$('.hume').removeClass('hidden');
+		$('.derrida').removeClass('hidden');
 	}
 }
 
@@ -39,6 +39,7 @@ function philosopher(){
 
 $(document).ready(function() {
 	$('#begin').click(function(){
+		quizTotal = 0;
 		$('div').first().removeClass('hidden').addClass('show');
 		$('#next').removeClass('hidden');
 		$(this).toggleClass('hidden');
@@ -50,13 +51,19 @@ $(document).ready(function() {
 		} else {
 			value = parseInt(value);
 			userChoice(value);
-			$('.show').next().removeClass('hidden').addClass('show');
-			$('.show').first('div').removeClass('show').addClass('hidden');	
+			//$('.show').next().removeClass('hidden').addClass('show');
+			//$('.show').first('div').removeClass('show').addClass('hidden');
+			$('.show').removeClass('show').addClass('hidden').next().removeClass('hidden').addClass('show');
 			currentPage++;
 			displayScore();
 		}
 	});
 	$('#start-over').click(function(){
+		$('.kant').addClass('hidden');
+		$('.derrida').addClass('hidden');
+		$('.hume').addClass('hidden');
+		$('.nietsche').addClass('hidden');
+		$('.finalscore').removeClass('show').addClass('hidden');
 		$('#begin').toggleClass('hidden');
 		$(this).toggleClass('hidden');
 	});
